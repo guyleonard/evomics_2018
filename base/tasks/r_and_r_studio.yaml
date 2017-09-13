@@ -19,7 +19,6 @@
 - name: Install Commonly Used R Packages
   apt: name={{item}} state=present
   with_items:
-    - r-cran-ggplot2
     - r-recommended
 
 - name: Download Rstudio Server
