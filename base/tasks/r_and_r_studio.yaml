@@ -16,16 +16,11 @@
    - r-base
    - r-base-dev
 
-- name: Install Commonly Used R Packages e.g. Bioconductor
+- name: Install Commonly Used R Packages
   apt: name={{item}} state=present
   with_items:
     - r-cran-ggplot2
     - r-recommended
-    - r-bioc-biobase
-    - r-bioc-biocinstaller
-    - r-bioc-edger
-    - r-bioc-rsamtools
-    - r-bioc-shortread
 
 - name: Download Rstudio Server
   get_url:
