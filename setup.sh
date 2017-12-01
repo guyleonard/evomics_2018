@@ -15,14 +15,14 @@ sudo -H pip install ansible
 # as much as I love cowsay, lets turn it off so Ansible's messages aren't cows
 export ANSIBLE_NOCOWS=1
 
-# Clone the Evomics 2017 github repo
-git clone https://github.com/guyleonard/evomics_2017.git
+# Clone the Evomics 2018 github repo
+git clone https://github.com/guyleonard/evomics_2018.git
 
 # hoping this helps with mysql install issues!
 export DEBIAN_FRONTEND=noninteractive
 
 # run the base playbook
-ansible-playbook /home/ubuntu/evomics_2017/base/main.yaml -b -K -c local -i "localhost,"
+ansible-playbook /home/ubuntu/evomics_2018/base/main.yaml -b -K -c local -i "localhost,"
 
 # turn off
 set +x
