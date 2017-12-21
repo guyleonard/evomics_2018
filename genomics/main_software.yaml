@@ -252,7 +252,7 @@
     ## Previously Installed
     # velvet, SPAdes, QUAST, fastqc, minia, gatb
 
-    - include: software_tasks/kmergenie.yaml version=1.7016
+    - include: software_tasks/kmergenie.yaml version=1.7023
       tags: assembly, kmergenie
    
     - include: software_tasks/prokka.yaml
@@ -327,7 +327,7 @@
        - libspreadsheet-writeexcel-perl
       tags: radseq, stacks
  
-    - include: software_tasks/stacks.yaml version=1.44
+    - include: software_tasks/stacks.yaml version=1.48
       tags: radseq, stacks
 
     - include: software_tasks/stacks_web.yaml
