@@ -217,7 +217,7 @@
     - include: software_tasks/SPAdes.yaml version=3.11.1
       tags: assembly, genomics, spades, circlator
 
-    - include: software_tasks/quast.yaml version=4.2
+    - include: software_tasks/quast.yaml version=4.6.1
       tags: assembly, genomics, quast
 
     - include: software_tasks/hmmer.yaml version=3.1b2
