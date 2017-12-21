@@ -211,10 +211,10 @@
       apt: name=bedtools state=present
       tags: genomics, bedtools
 
-    - include: software_tasks/qualimap.yaml version=2.2
+    - include: software_tasks/qualimap.yaml version=2.2.1
       tags: genomics, qualimap
 
-    - include: software_tasks/SPAdes.yaml version=3.9.0
+    - include: software_tasks/SPAdes.yaml version=3.11.1
       tags: assembly, genomics, spades, circlator
 
     - include: software_tasks/quast.yaml version=4.2
