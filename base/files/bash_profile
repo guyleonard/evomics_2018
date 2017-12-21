@@ -7,4 +7,5 @@ if [ -f ~/.bash_aliases ]; then
 DEFAULT=$PS1
 
 # change bash PS1 styling
+# https://dom.hastin.gs/files/bash-ps1/
 export PS1='\[\033[49;38;5;74m\]\u\[\033[49;38;5;104m\]@\[\033[49;38;5;74m\]\h\[\033[49;38;5;104m\]:[\[\033[49;38;5;173m\]\W\[\033[49;38;5;104m\]]$ \[\033[49;39m\]';
