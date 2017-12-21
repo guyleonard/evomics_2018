@@ -127,7 +127,7 @@
     ## Previously Installed
     # FastQC, fastq-mcf, seqtk, blasr
 
-    - include: software_tasks/pilon.yaml version=1.21
+    - include: software_tasks/pilon.yaml version=1.22
       tags: genomics, pilon
 
     - name: Installing vcftools
