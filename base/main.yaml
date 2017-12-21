@@ -28,6 +28,7 @@
       lineinfile: dest=/etc/ssh/sshd_config regexp="^#?PasswordAuthentication" line="PasswordAuthentication yes" backup=yes
    
     # Amazon has a keep alive around 60 seconds, then the ssh session times out. That's annoying, let's keep it alive!
+    # No idea if XSEDE also has this as default, let's not chance it!!
     - name: Changing SSH Timeout
       lineinfile: dest=/etc/ssh/sshd_config line="ClientAliveInterval 60" backup=yes
 
@@ -148,7 +149,6 @@
        - zip
        - zlib1g-dev
       tags: dependencies
-
 
     # Upgrade and Dist-Upgrade apt
     - name: Upgrade and Dist-Upgrade
