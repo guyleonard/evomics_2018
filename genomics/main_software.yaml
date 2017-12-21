@@ -202,9 +202,9 @@
       file: src=/usr/bin/fasttreeMP dest=/usr/bin/FastTreeMP state=link
       tags: genomics, fasttree
       
-    - include: software_tasks/igv.yaml version=2.3.80
+    - include: software_tasks/igv.yaml version=2.4
       tags: genomics, igv, transcriptomics
-    - include: software_tasks/igvtools.yaml version=2.3.80
+    - include: software_tasks/igvtools.yaml version=2.3.98
       tags: genomics, igvtools, transcriptomics
       
     - name: Install bedtools
