@@ -8,4 +8,4 @@ Icon[en_US]=mate-panel-launcher
 Name[en_US]=FastQC
 Exec=/usr/bin/fastqc
 Name=FastQC
-Icon=/home/genomics/.icons/fastqc.png
+Icon=/home/tb170112/.icons/fastqc.png
