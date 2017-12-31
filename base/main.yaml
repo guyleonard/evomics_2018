@@ -1,11 +1,10 @@
 - hosts: all
   become: yes
   vars:
-    - source_dir: /home//tb170112/software/.source
-    - software_dir: /home//tb170112/software
-    - mysql_root_pass: '*C49BCE1BFD6226D22E6B911016822E8EBBD9270A'
-    # - master_password: '$6$vaUtdo8oSgvGmBNO$B/0gxyOCv5b1DWGaiOTBUdZdHW5nrXZhUNw1yu8pVL5LS8Hs3DxL3/rD0aBEx9h7kNpDi73UZ3XYd7wpbXAx90'
-
+    - source_dir: /etc/skel/software/.source
+    - software_dir: /etc/skel/software
+    - mysql_root_pass: '*522F526859693BE4EBF948CA2FC0A25326CFD84E'
+ 
   pre_tasks:
     # Create Directories
     - name: Create Software Dir
@@ -16,10 +15,6 @@
     # Set up workhsop group  
     - name: Create "workshop" group
       group: name=workshop state=present
-      
-    # Set up the workshop user with a SHA-512 crypted password using mkpasswd
-    # - name: Create 'master' Workshop User with SUDO privileges
-    #  user: name=master group=workshop comment="Master Workshop User" state=present shell=/bin/bash groups="workshop,sudo" password="{{master_password}}"
     
     #- name: Enable Password Login
     #  lineinfile: dest=/etc/ssh/sshd_config regexp="^#?PasswordAuthentication" line="PasswordAuthentication yes" backup=yes
