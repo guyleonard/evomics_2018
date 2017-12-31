@@ -1,8 +1,9 @@
 - hosts: all
   become: yes
   vars:
-    - source_dir: /etc/skel/software/.source
-    - software_dir: /etc/skel/software
+    - install_dir: /etc/skel
+    - source_dir: "{{install_dir}}/software/.source"
+    - software_dir: "{{install_dir}}/software"
     - mysql_root_pass: '*522F526859693BE4EBF948CA2FC0A25326CFD84E'
  
   pre_tasks:
