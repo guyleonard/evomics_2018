@@ -16,14 +16,18 @@
     # Set up the workshop user with a SHA-512 crypted password using mkpasswd
     - name: Create {{workshop_user}} Workshop User
       user: name="{{workshop_user}}" group=workshop comment="{{workshop_user}} Workshop User" state=present shell=/bin/bash password={{genomics_user_password}}
+      tags: pre
       
     # Create genomics user Software Directories
     - name: Create Software Dir
       file: path={{software_dir}} state=directory owner="{{workshop_user}}" group=workshop
+      tags: pre
     - name: Create Software Source Dir
       file: path={{source_dir}} state=directory owner="{{workshop_user}}" group=workshop
+      tags: pre
     - name: Create Workshop Directory
       file: path={{workshop_dir}} state=directory owner="{{workshop_user}}" group=workshop
+      tags: pre
       
     - name: Installing Some Other Build Dependencies
       apt: name={{item}} state=present install_recommends=yes
@@ -34,6 +38,7 @@
        - libhdf5-dev #blasr
        - libfreetype6-dev #matplotlib
        - python3-pip
+       tags: pre
 
     # a bunch of aliasses I like to include
     - include: software_tasks/profile.yaml
