@@ -4,7 +4,7 @@
   changed_when: bin_conda.stat.exists == False
 
 - name: Downloading Miniconda {{version}}
-  get_url: url="https://repo.continuum.io/miniconda/Miniconda{{version}}-latest-Linux-x86_64.sh" dest="{{source_dir}}/Miniconda{{version}}-latest-Linux-x86_64.sh"
+  get_url: url="https://repo.continuum.io/miniconda/Miniconda{{version}}-latest-Linux-x86_64.sh" dest="{{install_dir}}/Miniconda{{version}}-latest-Linux-x86_64.sh"
   register: get_url_result
   until: "'OK' in get_url_result.msg or 'file already exists' in get_url_result.msg"
   retries: 5
@@ -12,15 +12,15 @@
   when: bin_conda.stat.exists == False
 
 - name: chmod on Miniconda {{version}}
-  file: path="{{source_dir}}/Miniconda{{version}}-latest-Linux-x86_64.sh" mode=0755 
+  file: path="{{install_dir}}/Miniconda{{version}}-latest-Linux-x86_64.sh" mode=0755 
 
 - name: Installing Miniconda {{version}}
-  shell: "{{source_dir}}/Miniconda{{version}}-latest-Linux-x86_64.sh -b -p {{prefix}}{{version}} creates={{prefix}}{{version}} executable=/bin/bash"
+  shell: "{{install_dir}}/Miniconda{{version}}-latest-Linux-x86_64.sh -b -p {{prefix}}{{version}} creates={{prefix}}{{version}} executable=/bin/bash"
   register: miniconda_installed
   when: get_url_result | success
   
 - name: Adding Miniconda {{version}} to PATH
-  lineinfile: dest="/home/{{workshop_user}}/.bash_paths"
+  lineinfile: dest="{{install_dir}}/.bash_paths"
               backrefs=yes
               backup=yes
               regexp="PATH=((?!.*?{{prefix}}{{version}}/bin).*?)$"
