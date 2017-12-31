@@ -1,5 +1,5 @@
 - name: Downloading SPAdes v{{version}}
-  get_url url="http://cab.spbu.ru/files/release{{version}}/SPAdes-{{version}}-Linux.tar.gz" dest="{{source_dir}}/SPAdes-{{version}}-Linux.tar.gz"
+  get_url: url="http://cab.spbu.ru/files/release{{version}}/SPAdes-{{version}}-Linux.tar.gz" dest="{{source_dir}}/SPAdes-{{version}}-Linux.tar.gz"
 
 - name: Uncompress SPAdes
   unarchive: 
