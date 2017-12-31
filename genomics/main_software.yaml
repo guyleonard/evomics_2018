@@ -86,11 +86,11 @@
     #  tags: general, conda, qiime, qiime2
 
     # Conda for Python 3.0
-    - include: software_tasks/conda.yaml version=3 prefix=/home/genomics/miniconda
+    - include: software_tasks/conda.yaml version=3 prefix=/home/tb170112/miniconda
       tags: general, conda, qiime, qiime2
 
     # Add Bioconda repos for Conda with Python 3
-    - include: software_tasks/bioconda.yaml version=3 prefix=/home/genomics/miniconda
+    - include: software_tasks/bioconda.yaml version=3 prefix=/home/tb170112/miniconda
       tags: general, conda, bioconda, qiime, qiime2
 
     ### Unix ###
