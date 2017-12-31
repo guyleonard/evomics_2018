@@ -1,7 +1,7 @@
 - hosts: all
   become: yes
   vars:
-    - workshop_user: genomics
+    - workshop_user: tb170112
     - source_dir: "/home/{{workshop_user}}/software/.source"
     - software_dir: "/home/{{workshop_user}}/software"
     - workshop_dir: "/home/{{workshop_user}}/workshop_materials"
