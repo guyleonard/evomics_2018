@@ -6,7 +6,7 @@
     - software_dir: "/home/{{workshop_user}}/software"
     - workshop_dir: "/home/{{workshop_user}}/workshop_materials"
     # sha-512 hash
-    - genomics_user_password: $6$xsb/UrhJ$sxievieZ7erTF93MwiBEZqm/mIpTVlTd3uhYGY2Urt5qoGapG3ZEU6NrGMOYd7QUnFfXhgDn12OPxDuxb20dB0
+    - genomics_user_password: $6$Psfdyw0Z/Uc.ZaCO$1vEFrjxO4DeJeQtgprgOa6.MQpUcHqKvXo6mfgfSi0rRLwyZAfrzSszaD429U5XBfNV.2f.Zwn1FP6Qqamv6J1
     # mysql native hash - SELECT PASSWORD("password") - also need to set in stacks_web.yaml
     - stacks_user_password: '*39094635b39efded76637451cdbd294d41865007'
     # jupyter password https://jupyter-notebook.readthedocs.io/en/latest/public_server.html#preparing-a-hashed-password
@@ -96,7 +96,7 @@
     - include: software_tasks/seqtk.yaml
       tags: genomics, seqdqc, seqtk
       
-    - include: software_tasks/trim_galore.yaml version=0.4.1
+    - include: software_tasks/trim_galore.yaml version=0.4.5
       tags: seqdqc, trim_galore
     
     - name: Installing cutadapt
@@ -111,7 +111,7 @@
       tags: genomics, seqdqc
       
     # The Ubuntu fastqc package is broken!
-    - include: software_tasks/fastqc.yaml version=0.11.5
+    - include: software_tasks/fastqc.yaml version=0.11.6
       tags: fastqc
 
 
@@ -127,7 +127,7 @@
     ## Previously Installed
     # FastQC, fastq-mcf, seqtk, blasr
 
-    - include: software_tasks/pilon.yaml version=1.21
+    - include: software_tasks/pilon.yaml version=1.22
       tags: genomics, pilon
 
     - name: Installing vcftools
@@ -161,16 +161,16 @@
       tags: genomics, poretools, assembly
 
     # installs bowtie 1 and 2
-    - include: software_tasks/bowtie.yaml version=2.2.9
+    - include: software_tasks/bowtie.yaml version=2.3.3.1
       tags: genomics, bowtie, transcriptomics
 
     - include: software_tasks/bwa.yaml
       tags: genomics, bwa, gatb, circlator
       
-    - include: software_tasks/samtools.yaml version=1.3.1
+    - include: software_tasks/samtools.yaml version=1.6
       tags: genomics, samtools, transcriptomics
 
-    - include: software_tasks/bcftools.yaml version=1.3.1
+    - include: software_tasks/bcftools.yaml version=1.6
       tags: genomics, bcftools
       
     - name: Installing blast legacy & blast+
@@ -202,22 +202,22 @@
       file: src=/usr/bin/fasttreeMP dest=/usr/bin/FastTreeMP state=link
       tags: genomics, fasttree
       
-    - include: software_tasks/igv.yaml version=2.3.80
+    - include: software_tasks/igv.yaml version=2.4
       tags: genomics, igv, transcriptomics
-    - include: software_tasks/igvtools.yaml version=2.3.80
+    - include: software_tasks/igvtools.yaml version=2.3.98
       tags: genomics, igvtools, transcriptomics
       
     - name: Install bedtools
       apt: name=bedtools state=present
       tags: genomics, bedtools
 
-    - include: software_tasks/qualimap.yaml version=2.2
+    - include: software_tasks/qualimap.yaml version=2.2.1
       tags: genomics, qualimap
 
-    - include: software_tasks/SPAdes.yaml version=3.9.0
+    - include: software_tasks/SPAdes.yaml version=3.11.1
       tags: assembly, genomics, spades, circlator
 
-    - include: software_tasks/quast.yaml version=4.2
+    - include: software_tasks/quast.yaml version=4.6.1
       tags: assembly, genomics, quast
 
     - include: software_tasks/hmmer.yaml version=3.1b2
@@ -252,7 +252,7 @@
     ## Previously Installed
     # velvet, SPAdes, QUAST, fastqc, minia, gatb
 
-    - include: software_tasks/kmergenie.yaml version=1.7016
+    - include: software_tasks/kmergenie.yaml version=1.7023
       tags: assembly, kmergenie
    
     - include: software_tasks/prokka.yaml
@@ -327,7 +327,7 @@
        - libspreadsheet-writeexcel-perl
       tags: radseq, stacks
  
-    - include: software_tasks/stacks.yaml version=1.44
+    - include: software_tasks/stacks.yaml version=1.48
       tags: radseq, stacks
 
     - include: software_tasks/stacks_web.yaml
@@ -343,7 +343,7 @@
     # The default is to disable sse2 and sse4.1 extensions
     # as we have been burned before by some Amazon instances
     # not having those extensions available! 
-    - include: software_tasks/gmap_gsnap.yaml version=2016-08-24
+    - include: software_tasks/gmap_gsnap.yaml version=2017-11-15
       tags: radseq, gmap, gsnap, transcriptomics
    
     - include: software_tasks/structure_console.yaml version=2.3.4
@@ -360,7 +360,7 @@
     - include: software_tasks/r_transcriptomics.yaml
       tags: r, transcriptomics
 
-    - include: software_tasks/rsem.yaml version=1.2.31
+    - include: software_tasks/rsem.yaml version=1.30
       tags: transcriptomics, rsem
     
     - name: Installing xpdf and lighttpd
