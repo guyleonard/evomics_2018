@@ -6,7 +6,7 @@
     - software_dir: "/home/{{workshop_user}}/software"
     - workshop_dir: "/home/{{workshop_user}}/workshop_materials"
     # sha-512 hash
-    - genomics_user_password: $6$Psfdyw0Z/Uc.ZaCO$1vEFrjxO4DeJeQtgprgOa6.MQpUcHqKvXo6mfgfSi0rRLwyZAfrzSszaD429U5XBfNV.2f.Zwn1FP6Qqamv6J1
+    - genomics_user_password: $6$koiYs3PV$Z2URGLgi7sjUP3Atwq/I6m.Q7JNG/NVMWqbsdlvmMPoUe9IRT02vSfp8WDFgNkqMkwtkXXADiDwr5fUCfehZt/
     # mysql native hash - SELECT PASSWORD("password") - also need to set in stacks_web.yaml
     - stacks_user_password: '*39094635b39efded76637451cdbd294d41865007'
     # jupyter password https://jupyter-notebook.readthedocs.io/en/latest/public_server.html#preparing-a-hashed-password
