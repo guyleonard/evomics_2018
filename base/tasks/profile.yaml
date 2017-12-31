@@ -4,6 +4,6 @@
   become_user: tb170112 
 
 - name: Change bash PS1 promt colour etc
-  copy: src="{{playbook_dir}}/files/bash_profile" dest="{{install_dir}}/.bash_profile
+  copy: src="{{playbook_dir}}/files/bash_profile" dest="{{install_dir}}/.bash_profile"
   become: true
   become_user: tb170112 
