@@ -38,7 +38,7 @@
        - libhdf5-dev #blasr
        - libfreetype6-dev #matplotlib
        - python3-pip
-       tags: pre
+      tags: pre
 
     # a bunch of aliasses I like to include
     - include: software_tasks/profile.yaml
