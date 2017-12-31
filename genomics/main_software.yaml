@@ -1,16 +1,17 @@
 - hosts: all
   become: yes
   vars:
+    - install_dir: /etc/skel
     - workshop_user: tb170112
-    - source_dir: "/home/{{workshop_user}}/software/.source"
-    - software_dir: "/home/{{workshop_user}}/software"
-    - workshop_dir: "/home/{{workshop_user}}/workshop_materials"
+    - source_dir: "{{install_dir}}/software/.source"
+    - software_dir: "{{install_dir}}/software"
+    - workshop_dir: "{{install_dir}}/workshop_materials"
     # sha-512 hash
     - genomics_user_password: $6$koiYs3PV$Z2URGLgi7sjUP3Atwq/I6m.Q7JNG/NVMWqbsdlvmMPoUe9IRT02vSfp8WDFgNkqMkwtkXXADiDwr5fUCfehZt/
     # mysql native hash - SELECT PASSWORD("password") - also need to set in stacks_web.yaml
-    - stacks_user_password: '*39094635b39efded76637451cdbd294d41865007'
+    - stacks_user_password: '*C49BCE1BFD6226D22E6B911016822E8EBBD9270A'
     # jupyter password https://jupyter-notebook.readthedocs.io/en/latest/public_server.html#preparing-a-hashed-password
-    - jupyter_password: 'sha1:0909a8ee63e4:7c0d5e80d50acbdc07d9e7f3ac66d028713e2825'
+    - jupyter_password: 'sha1:9462f360da6a:8275b349b60cbc8341fad3504b4f5cd07e09c975'
     
   pre_tasks:
     # Set up the workshop user with a SHA-512 crypted password using mkpasswd
