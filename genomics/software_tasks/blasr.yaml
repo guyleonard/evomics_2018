@@ -1,5 +1,5 @@
 - name: Cloning blasr
-  git: repo=git://github.com/PacificBiosciences/blasr.git dest="{{install_dir}}/blasr" clone=yes recursive=yes update=yes
+  git: repo=git://github.com/PacificBiosciences/blasr.git dest="{{source_dir}}/blasr" clone=yes recursive=yes update=yes
 
 - name: Creating 4GB Swap
   shell: "{{item}}"
