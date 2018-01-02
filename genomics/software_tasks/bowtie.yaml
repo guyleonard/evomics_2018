@@ -15,7 +15,7 @@
     src="{{source_dir}}/bowtie2-{{version}}-linux-x86_64.zip"
     dest="{{software_dir}}"
     copy=no
-    creates="{{software_dir}}/bowtie2-{{version}}/VERSION"
+    creates="{{software_dir}}/bowtie2-{{version}}-linux-x86_64/VERSION"
     
 - name: Installing Bowties v{{version}} Files
   copy:
@@ -23,5 +23,5 @@
     dest: /usr/local/bin
     mode: 0755
   with_fileglob:
-    - "{{software_dir}}/bowtie2-{{version}}/bowtie2*"
+    - "{{software_dir}}/bowtie2-{{version}}-linux-x86_64/bowtie2*"
 
