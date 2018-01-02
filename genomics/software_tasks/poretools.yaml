@@ -14,5 +14,5 @@
   git: repo=https://github.com/arq5x/poretools dest="{{source_dir}}/poretools" clone=yes update=yes
 
 - name: Install poretools as root
-  shell: "python {{source_dir}}/poretools/setup.py install"
+  shell: "sudo python {{source_dir}}/poretools/setup.py install"
   become: true
