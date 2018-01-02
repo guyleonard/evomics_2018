@@ -40,7 +40,7 @@
    - bin/prokka --setupdb
 
 - name: Add Prokka to PATH
-  lineinfile: dest="/home/{{workshop_user}}/.bash_paths"
+  lineinfile: dest="{{install_dir}}/.bash_paths"
               backrefs=yes
               backup=yes
               regexp="PATH=((?!.*?/home/{{workshop_user}}/software/prokka/bin/).*?)$"
