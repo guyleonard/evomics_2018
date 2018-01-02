@@ -79,7 +79,7 @@
   lineinfile: dest="{{software_dir}}/signalp-4.1/signalp" regexp='my\s+\$MAX_ALLOWED_ENTRIES\=10000\;' line="my $MAX_ALLOWED_ENTRIES=2000000;" backup=yes
 
 - name: Adding SignalP to PATH
-  lineinfile: dest="/home/{{workshop_user}}/.bash_paths"
+  lineinfile: dest="{{install_dir}}/.bash_paths"
               backrefs=yes
               backup=yes
               regexp="PATH=((?!.*?{{software_dir}}/signalp-4.1).*?)$"
@@ -139,7 +139,7 @@
   replace: dest="{{software_dir}}/rnammer/core-rnammer" regexp='--cpu 1 ' replace='' backup=yes
 
 - name: Adding RNAmmer to PATH
-  lineinfile: dest="/home/{{workshop_user}}/.bash_paths"
+  lineinfile: dest="{{install_dir}}/.bash_paths"
               backrefs=yes
               backup=yes
               regexp="PATH=((?!.*?{{software_dir}}/rnammer).*?)$"
