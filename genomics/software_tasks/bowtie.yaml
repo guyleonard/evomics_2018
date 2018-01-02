@@ -3,7 +3,7 @@
 
 - name: Downloading Bowtie v{{version}}
   get_url:
-    url="https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.9/bowtie2-{{version}}-linux-x86_64.zip"
+    url="https://sourceforge.net/projects/bowtie-bio/files/bowtie2/{{version}}/bowtie2-{{version}}-linux-x86_64.zip"
     dest="{{source_dir}}/bowtie2-{{version}}-linux-x86_64.zip"
   register: get_url_result
   until: "'OK' in get_url_result.msg or 'file already exists' in get_url_result.msg"
