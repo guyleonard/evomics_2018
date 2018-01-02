@@ -201,10 +201,10 @@
       
     - name: Installing FastTree2
       apt: name=fasttree state=present
-      tags: fasttree
+      tags: genommic, fasttree
     - name: Install FastTree2 Links
       file: src=/usr/bin/fasttree dest=/usr/bin/FastTree state=link
-      tags: fasttree
+      tags: genomics, fasttree
     - name: Install FastTree2 MP Links
       file: src=/usr/bin/fasttreeMP dest=/usr/bin/FastTreeMP state=link
       tags: genomics, fasttree
