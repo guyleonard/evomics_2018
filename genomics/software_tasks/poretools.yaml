@@ -13,10 +13,9 @@
 - name: Cloning poretools
   git: repo=https://github.com/arq5x/poretools dest="{{source_dir}}/poretools" clone=yes update=yes
 
-- name: Chnaging to poretools dir
-  chdir: "{{source_dir}}/poretools/"
-    
 - name: Install poretools as root
   shell: "python {{source_dir}}/poretools/setup.py install"
   become: true
   become_user: root
+  args:
+    chdir: "{{source_dir}}/poretools/"
