@@ -366,7 +366,7 @@
       with_items:
         - xpdf
         - lighttpd
-      tags: transcriptomics
+      tags: transcriptomics, xpdf
 
     - include: software_tasks/trinity.yaml
       tags: trinity, transcriptomics
