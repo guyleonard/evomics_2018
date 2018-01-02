@@ -5,10 +5,10 @@
 
 - name: Uncompressing IGV
   unarchive: 
-    src="{{source_dir}}/IGV_{{version}}.zip"
+    src="{{source_dir}}/IGV_{{version}}.0.zip"
     dest="{{software_dir}}"
     copy=no
-    creates="{{software_dir}}/IGV_{{version}}/igv.sh"
+    creates="{{software_dir}}/IGV_{{version}}.0/igv.sh"
     
 - name: Installing IGV
-  file: src="{{software_dir}}/IGV_{{version}}/igv.sh" dest=/usr/local/bin/igv.sh state=link
+  file: src="{{software_dir}}/IGV_{{version}}.0/igv.sh" dest=/usr/local/bin/igv.sh state=link
