@@ -308,16 +308,8 @@
 
     - include: software_tasks/jupyter.yaml
       tags: qiime, qiime2, jupyter, metagenomics
-    
 
-    ### PhyloSeq ###
-    ## Previously Installed
-    # r, r-studio-server/desktop, littler, ggplot2
-    
-    - include: software_tasks/phyloseq.yaml
-      tags: phyloseq
 
-    
     ### RAD-Seq / Stacks ###
     ## Previously Installed
     # MySQL (MariaDB) in Base Install
