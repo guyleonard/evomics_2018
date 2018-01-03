@@ -1,55 +1,57 @@
-- name: Cloning blasr
-  git: repo=git://github.com/PacificBiosciences/blasr.git dest="{{source_dir}}/blasr" clone=yes recursive=yes update=yes
+# This is a constant nightmare to build. Everytime time there's something new that breaks. The CMAKE instructions work best, but you need to have htslib installed...
 
-- name: Creating 4GB Swap
-  shell: "{{item}}"
-  become: yes
-  with_items:
-    - dd if=/dev/zero of=/var/swap.img bs=4000k count=4000
+#- name: Cloning blasr
+#  git: repo=git://github.com/PacificBiosciences/blasr.git dest="{{source_dir}}/blasr" clone=yes recursive=yes update=yes
 
-- name: Making 4GB Swap
-  shell: "{{item}}"
-  become: yes
-  with_items: 
-    - mkswap /var/swap.img
+#- name: Creating 4GB Swap
+#  shell: "{{item}}"
+#  become: yes
+#  with_items:
+#    - dd if=/dev/zero of=/var/swap.img bs=4000k count=4000
 
-- name: Swapon
-  shell: "{{item}}"
-  become: yes
-  with_items: 
-    - swapon /var/swap.img
+#- name: Making 4GB Swap
+#  shell: "{{item}}"
+#  become: yes
+#  with_items: 
+#    - mkswap /var/swap.img
 
-- name: Running ./configure for blasr
-  shell: "{{item}}"
-  args:
-   chdir: "{{source_dir}}/blasr"
-  with_items:
-    - ./configure.py --with-szlib --shared --sub --no-pbbam HDF5_INCLUDE=/usr/include/hdf5/serial/ HDF5_LIB=/usr/lib/x86_64-linux-gnu/hdf5/serial
+#- name: Swapon
+#  shell: "{{item}}"
+#  become: yes
+#  with_items: 
+#    - swapon /var/swap.img
 
-- name: Running make configure-submodule
-  make: chdir="{{source_dir}}/blasr" target=configure-submodule
+#- name: Running ./configure for blasr
+#  shell: "{{item}}"
+#  args:
+#   chdir: "{{source_dir}}/blasr"
+#  with_items:
+#    - ./configure.py --with-szlib --shared --sub --no-pbbam HDF5_INCLUDE=/usr/include/hdf5/serial/ HDF5_LIB=/usr/lib/x86_64-linux-gnu/hdf5/serial
 
-- name: Running make build-submodule
-  make: chdir="{{source_dir}}/blasr" target=build-submodule
+#- name: Running make configure-submodule
+#  make: chdir="{{source_dir}}/blasr" target=configure-submodule
 
-- name: Running make blasr
-  shell: "{{item}}"
-  args:
-   chdir: "{{source_dir}}/blasr"
-  with_items:
-    - make -lsz blasr
+#- name: Running make build-submodule
+#  make: chdir="{{source_dir}}/blasr" target=build-submodule
 
-- name: Swapoff
-  shell: "{{item}}"
-  become: yes
-  with_items: 
-    - swapoff /var/swap.img
+#- name: Running make blasr
+#  shell: "{{item}}"
+#  args:
+#   chdir: "{{source_dir}}/blasr"
+#  with_items:
+#    - make -lsz blasr
+
+#- name: Swapoff
+#  shell: "{{item}}"
+#  become: yes
+#  with_items: 
+#    - swapoff /var/swap.img
     
-- name: Removing 4GB Swap
-  shell: "{{item}}"
-  become: yes
-  with_items: 
-    - rm /var/swap.img
+#- name: Removing 4GB Swap
+#  shell: "{{item}}"
+#  become: yes
+#  with_items: 
+#    - rm /var/swap.img
 
 
 
