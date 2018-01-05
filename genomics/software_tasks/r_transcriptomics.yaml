@@ -31,4 +31,16 @@
 - name: Installing qvalue via Bioconductor
   shell: Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite('qvalue')"
 
+- name: Installing tidyverse via Bioconductor
+  shell: Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite('tidyverse')"
+
+- name: Installing tidyverse via Bioconductor
+  shell: Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite('DEXSeq')"
+
+- name: Installing tidyverse via Bioconductor
+  shell: Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite('DESeq2')"
+
+
+
+
 
