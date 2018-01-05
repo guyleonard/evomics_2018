@@ -1,3 +1,8 @@
+## be aware older versions of this put two files in /usr/local/include
+# assert.h and except.h 
+# and that messes up with a lot of other installs!
+# brian hass has mailed the author..
+
 - name: Downloading GMAP / GSNAP {{version}}
   get_url: url="http://research-pub.gene.com/gmap/src/gmap-gsnap-{{version}}.tar.gz" dest="{{source_dir}}/gmap-gsnap-{{version}}.tar.gz"
 
