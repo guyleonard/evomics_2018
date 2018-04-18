@@ -3,6 +3,8 @@ Instructions and notes for creating the VM for the [evomics.org](http://evomics.
 
 Information on previous VMs can be found [here](https://github.com/guyleonard/evomics_2017).
 
+'Warning': This set of playbooks was heavily modified to work with XSEDE/Jetstream. We never could quite get their systems working for a few reasons. Oh well!
+
 # 2018 Workshop on Genomics
 
 We will be using the latest Ubuntu Linux LTS for our Operating System.
